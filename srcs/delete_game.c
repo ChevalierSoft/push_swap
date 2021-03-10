@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   delete_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 15:54:13 by dait-atm         ###   ########.fr       */
+/*   Created: 2021/03/10 15:36:29 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/03/10 16:02:09 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../inc/header.h"
 
-# include "../libft/libft.h"
-# include <errno.h>
-
-typedef t_list t_stack;
-
-typedef struct s_game
+void	delete_game(t_game *g)
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		biggest;
-	int		size;
-}			t_game;
-
-// delete_game.c
-void delete_game(t_game *g);
-
-// display.c
-void	display_lists(t_game *g);
-
-#endif
+	ft_lstclear(&g->a, &free);
+	ft_lstclear(&g->b, &free);
+}

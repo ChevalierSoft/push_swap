@@ -4,6 +4,7 @@ CH_OBJS = $(CH_SRCS:.c=.o)
 
 CH_SRCS	= $(addprefix srcs/, \
 checker.c \
+delete_game.c \
 display.c \
 )
 
