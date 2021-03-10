@@ -3,15 +3,17 @@
 
 # include "../libft/libft.h"
 
-typedef struct s_stack
-{
-    t_list *s;
-}               t_stack;
+typedef t_list t_stack;
 
 typedef struct s_game
 {
-    t_stack a;
-    t_stack b;
-}               t_game;
+	t_stack	*a;
+	t_stack	*b;
+	int		biggest;
+	int		size;
+}			t_game;
+
+// display.c
+void	display_lists(t_game *g);
 
 #endif

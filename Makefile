@@ -1,9 +1,11 @@
 CC		= gcc
 FLAGS	= -g
-
-CH_SRCS	= srcs/checker.c
-
 CH_OBJS = $(CH_SRCS:.c=.o)
+
+CH_SRCS	= $(addprefix srcs/, \
+checker.c \
+display.c \
+)
 
 ifeq ($(OS),Windows_NT)
 	POSIX = 0
@@ -18,7 +20,7 @@ _libft:
 	@make --silent -C ./libft/
 
 %.o : %.c
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@ -DPOSIX=$(POSIX)
 
 clean:
 	rm 
