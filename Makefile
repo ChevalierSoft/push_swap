@@ -1,12 +1,30 @@
-CC		= gcc
-FLAGS	= -g
-CH_OBJS = $(CH_SRCS:.c=.o)
+CC			= gcc
+FLAGS		= -g
+CH_OBJS 	= $(CH_SRCS:.c=.o)
 
-CH_SRCS	= $(addprefix srcs/, \
+SHARED_SRCS	= $(addprefix srcs/, \
+sa.c \
+sb.c \
+ss.c \
+pa.c \
+pb.c \
+ra.c \
+rb.c \
+rr.c \
+rra.c \
+rrb.c \
+rrr.c \
+)
+
+CH_SRCS		= $(addprefix srcs/, \
 checker.c \
 delete_game.c \
 display.c \
+listen.c \
+quit.c \
 )
+
+CH_SRCS 	+= $(SHARED_SRCS)
 
 ifeq ($(OS),Windows_NT)
 	POSIX = 0
@@ -24,4 +42,13 @@ _libft:
 	@$(CC) $(FLAGS) -c $< -o $@ -DPOSIX=$(POSIX)
 
 clean:
-	rm 
+	@/bin/rm -f $(CH_OBJS) 
+
+fclean: clean
+	@/bin/rm -f checker
+#	make fclean --silent -C ./libft
+
+re : fclean all
+
+.PHONY : all re clean fclean checker push_swap _libft
+
