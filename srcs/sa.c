@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:28:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 17:28:50 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:09:25 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	sa(t_game *g)
 {
+	void	*ref;
 
+	if (!g->a || !g->a->next)
+		return ;
+	ref = g->a->content;
+	g->a->content = g->a->next->content;
+	g->a->next->content = ref;
 }
 

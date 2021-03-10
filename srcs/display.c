@@ -6,35 +6,55 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 16:45:32 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/10 20:08:21 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
+void	fill_panel(t_stack *sk, char *panel)
+{
+	int		i;
+	char	*tmp;
+
+	i = 0;
+	tmp = ft_itoa(*((int *)sk->content));
+	while (i < ft_strlen(tmp))
+	{
+		panel[i] = tmp[i];
+		i++;
+	}
+	free(tmp);
+}
+
 void	display_lists(t_game *g)
 {
+	unsigned char	panel[27];
 	t_stack	*a;
 	t_stack	*b;
 
 	a = g->a;
 	b = g->b;
 	//system("clear");
-	printf(" a  |  b\n");
-	printf("---------\n");
+	printf("     a      |      b\n");
+	printf("—————————————————————————\n");
 	while (a || b)
 	{
+		ft_memset(panel, ' ', 26);
+		panel[26] = '\0';
+		panel[12] = '|';
 		if (a)
 		{
-			printf("%d", *((int *)a->content));
+			fill_panel(a, panel);
 			a = a->next;
 		}
 		if (b)
 		{
-			printf("  |  %d", *((int *)b->content));
+			fill_panel(b, panel + 13);
 			b = b->next;
 		}
-		printf("\n");
+		printf("%s\n", panel);
 	}
 	//usleep(300000);
 }
+
