@@ -6,12 +6,13 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 09:19:21 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:15:15 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
+static inline
 void	fill_panel(t_stack *sk, char *panel)
 {
 	int		i;
@@ -33,6 +34,8 @@ void	display_lists(t_game *g)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (!g->v)
+		return ;
 	a = g->a;
 	b = g->b;
 	system("clear");

@@ -6,18 +6,20 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:11:08 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 08:34:30 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:15:00 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
+static inline
 void	wrong_input(t_game *g, char *l)
 {
 	free(l);
 	quit(g, 1);
 }
 
+static inline
 void	check_instruction(t_game *g, char *l)
 {
 	if (!ft_strncmp(l, "sa", 3))
@@ -50,11 +52,9 @@ void	listen(t_game *g)
 {
 	char	*l;
 
-	if (!g->v)
-		return ;
 	while (get_next_line(0, &l) >= 1)
 	{
-		printf("%s\n", l);
+		//printf("%s\n", l);
 		check_instruction(g, l);
 		free(l);
 		display_lists(g);
@@ -65,7 +65,7 @@ void	listen(t_game *g)
 		free(l);
 		quit(g, 1);	
 	}
-	display_lists(g);
+	//display_lists(g);
 	free(l);
 }
 

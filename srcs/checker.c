@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 09:14:10 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:07:57 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		return (1);
 	if (fill_stack(&g, argc, argv))
 		return (1);
-	if (g.v)
+	//if (g.v)
 		display_lists(&g);
 	listen(&g);
 	if (is_sorted(&g))
