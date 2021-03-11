@@ -14,14 +14,18 @@ rr.c \
 rra.c \
 rrb.c \
 rrr.c \
+check_args.c \
+check_occ.c \
+delete_game.c \
+fill_stack.c \
+quit.c \
 )
 
 CH_SRCS		= $(addprefix srcs/, \
 checker.c \
-delete_game.c \
 display.c \
+is_sorted.c \
 listen.c \
-quit.c \
 )
 
 CH_SRCS 	+= $(SHARED_SRCS)

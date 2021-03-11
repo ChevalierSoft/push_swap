@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:11:08 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 19:09:46 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 08:34:30 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	listen(t_game *g)
 {
 	char	*l;
 
+	if (!g->v)
+		return ;
 	while (get_next_line(0, &l) >= 1)
 	{
 		printf("%s\n", l);

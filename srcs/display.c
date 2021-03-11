@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 20:08:21 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 09:19:21 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	display_lists(t_game *g)
 
 	a = g->a;
 	b = g->b;
-	//system("clear");
+	system("clear");
 	printf("     a      |      b\n");
 	printf("—————————————————————————\n");
 	while (a || b)
@@ -55,6 +55,6 @@ void	display_lists(t_game *g)
 		}
 		printf("%s\n", panel);
 	}
-	//usleep(300000);
+	usleep(300000);
 }
 

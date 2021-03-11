@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 17:38:42 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 09:14:43 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,26 @@ typedef struct s_game
 	t_stack	*b;
 	int		biggest;
 	int		size;
+	int		v;
 }			t_game;
 
+// check_args.c
+int		check_args(t_game *g, int argc, char **argv);
+
+// check_occ.c
+int		check_occ(t_game *g, int tmp);
+
 // delete_game.c
-void delete_game(t_game *g);
+void 	delete_game(t_game *g);
 
 // display.c
 void	display_lists(t_game *g);
+
+// fill_stack.c
+int		fill_stack(t_game *g, int argc, char **argv);
+
+// is_sorted.c
+int		is_sorted(t_game *g);
 
 // listen.c
 void	listen(t_game *g);

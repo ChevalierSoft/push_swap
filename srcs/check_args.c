@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 09:14:10 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 09:08:16 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-int main(int argc, char **argv)
+int check_args(t_game *g, int argc, char **argv)
 {
-	t_game	g;
+	int i;
+	int	j;
 
-	g.a = NULL;
-	g.b = NULL;
-	g.v = 0;
-	if (check_args(&g, argc, argv))
+	i = 1;
+	if (argc < 2)
 		return (1);
-	if (fill_stack(&g, argc, argv))
-		return (1);
-	if (g.v)
-		display_lists(&g);
-	listen(&g);
-	if (is_sorted(&g))
-		printf("OK\n");
-	else
-		printf("KO\n");
-	delete_game(&g);
+	if (!ft_strncmp(argv[1], "-v", 3))
+	{
+		if (argc < 3)
+			return (1);
+		g->v = i++;
+	}
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
+			j++;
+		if (!ft_strlen(argv[i] + j) || !ft_isaldigit(argv[i] + j))
+			quit(g, 1);
+		i++;
+	}
 	return (0);
 }
+
