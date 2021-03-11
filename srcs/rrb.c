@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:28:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 17:31:54 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 08:18:33 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void	rrb(t_game *g)
 {
+	t_stack	*node;
 
+	if (!g->b || !g->b->next)
+		return ;
+	node = ft_lstgetnb(g->b, ft_lstcount(g->b) - 2);
+	node->next->next = g->b;
+	g->b = node->next;
+	node->next = NULL;
 }
 
