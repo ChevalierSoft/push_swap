@@ -19,6 +19,7 @@ check_args.c \
 check_occ.c \
 delete_game.c \
 fill_stack.c \
+game_init.c \
 quit.c \
 )
 

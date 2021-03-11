@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 11:15:15 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 12:29:06 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	display_lists(t_game *g)
 	a = g->a;
 	b = g->b;
 	system("clear");
+	printf("operation n. %d\n", g->cpt);
 	printf("     a      |      b\n");
 	printf("—————————————————————————\n");
 	while (a || b)
