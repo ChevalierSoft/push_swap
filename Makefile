@@ -31,6 +31,7 @@ listen.c \
 
 PS_SRCS		= $(addprefix srcs/, \
 push_swap.c \
+sort_stack.c \
 )
 
 CH_SRCS 	+= $(SHARED_SRCS)

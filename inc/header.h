@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 09:14:43 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:24:24 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	listen(t_game *g);
 
 // quit.c
 void	quit(t_game *g, int err);
+
+// sort_stack
+void	sort_stack(t_game *g);
 
 // operator's file
 void	sa(t_game *g);

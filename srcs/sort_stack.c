@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 11:18:37 by dait-atm         ###   ########.fr       */
+/*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/03/11 11:22:17 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-int main(int argc, char **argv)
+void	sort_stack(t_game *g)
 {
-	t_game	g;
-
-	g.a = NULL;
-	g.b = NULL;
-	g.v = 0;
-	if (check_args(&g, argc, argv))
-		return (1);
-	if (fill_stack(&g, argc, argv))
-		return (1);
-	if (g.v)
-		display_lists(&g);
-	listen(&g);
-	if (is_sorted(&g))
-		printf("OK\n");
-	else
-		printf("KO\n");
-	delete_game(&g);
-	return (0);
+	printf("sa\n");
+	printf("pb\n");
+	printf("pb\n");
+	printf("pb\n");
+	printf("rr\n");
+	printf("rrr\n");
+	printf("sa\n");
+	printf("pa\n");
+	printf("pa\n");
+	printf("pa\n");
 }
+

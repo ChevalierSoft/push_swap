@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 10:49:04 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:22:39 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		return (1);
 	if (fill_stack(&g, argc, argv))
 		return (1);
-	printf("sort\n");
+	sort_stack(&g);
 	delete_game(&g);
 	return (0);
 }
