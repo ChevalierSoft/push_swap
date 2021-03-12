@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:34:46 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/12 09:42:30 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	sort_stack(t_game *g)
 {
-	dumb_sort(g);
+	//dumb_sort(g);
+	insert_sort(g);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:28:06 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:09:55 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void 	delete_game(t_game *g);
 // display.c
 void	display_lists(t_game *g);
 
+// dumb_sort.c
+void	dumb_sort(t_game *g);
+
 // fill_stack.c
 int		fill_stack(t_game *g, int argc, char **argv);
 
@@ -46,6 +49,9 @@ void	game_init(t_game *g);
 
 // is_sorted.c
 int		is_sorted(t_game *g);
+
+// insert_sort.c
+void	insert_sort(t_game *g);
 
 // listen.c
 void	listen(t_game *g);

@@ -21,11 +21,13 @@ delete_game.c \
 fill_stack.c \
 game_init.c \
 quit.c \
+\
+\
+display.c \
 )
 
 CH_SRCS		= $(addprefix srcs/, \
 checker.c \
-display.c \
 is_sorted.c \
 listen.c \
 )
@@ -33,6 +35,8 @@ listen.c \
 PS_SRCS		= $(addprefix srcs/, \
 push_swap.c \
 sort_stack.c \
+dumb_sort.c \
+insert_sort.c \
 )
 
 CH_SRCS 	+= $(SHARED_SRCS)
