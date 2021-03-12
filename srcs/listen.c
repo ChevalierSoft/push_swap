@@ -23,27 +23,27 @@ static inline
 void	check_instruction(t_game *g, char *l)
 {
 	if (!ft_strncmp(l, "sa", 3))
-		sa(g);
+		sa(g, 0);
 	else if (!ft_strncmp(l, "sb", 3))
-		sb(g);
+		sb(g, 0);
 	else if (!ft_strncmp(l, "ss", 3))
-		ss(g);
+		ss(g, 0);
 	else if (!ft_strncmp(l, "pa", 3))
-		pa(g);
+		pa(g, 0);
 	else if (!ft_strncmp(l, "pb", 3))
-		pb(g);
+		pb(g, 0);
 	else if (!ft_strncmp(l, "ra", 3))
-		ra(g);
+		ra(g, 0);
 	else if (!ft_strncmp(l, "rb", 3))
-		rb(g);
+		rb(g, 0);
 	else if (!ft_strncmp(l, "rr", 3))
-		rr(g);
+		rr(g, 0);
 	else if (!ft_strncmp(l, "rra", 4))
-		rra(g);
+		rra(g, 0);
 	else if (!ft_strncmp(l, "rrb", 4))
-		rrb(g);
+		rrb(g, 0);
 	else if (!ft_strncmp(l, "rrr", 4))
-		rrr(g);
+		rrr(g, 0);
 	else
 		wrong_input(g, l);
 }

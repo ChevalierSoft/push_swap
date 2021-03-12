@@ -41,18 +41,15 @@ void	dumb_sort(t_game *g)
 		i = 0;
 		while (i < min_pos)
 		{
-			ra(g);
-			ft_print("ra\n");
+			ra(g, 1);
 			i++;
 		}
 		// push it to b
-		pb(g);
-		ft_print("pb\n");
+		pb(g, 1);
 	}
 	while (g->b)
 	{
-		pa(g);
-		ft_print("pa\n");
+		pa(g, 1);
 	}
 }
 

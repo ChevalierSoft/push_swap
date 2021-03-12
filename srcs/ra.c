@@ -12,12 +12,14 @@
 
 #include "../inc/header.h"
 
-void	ra(t_game *g)
+void	ra(t_game *g, int aff)
 {
 	t_stack	*node;
 
 	if (!g->a || !g->a->next)
 		return ;
+	if (aff)
+		ft_print("ra\n");
 	node = g->a;
 	g->a = g->a->next;
 	node->next = NULL;

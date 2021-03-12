@@ -63,16 +63,16 @@ void	quit(t_game *g, int err);
 void	sort_stack(t_game *g);
 
 // operator's file
-void	sa(t_game *g);
-void	sb(t_game *g);
-void	ss(t_game *g);
-void	pa(t_game *g);
-void	pb(t_game *g);
-void	ra(t_game *g);
-void	rb(t_game *g);
-void	rr(t_game *g);
-void	rra(t_game *g);
-void	rrb(t_game *g);
-void	rrr(t_game *g);
+void	sa(t_game *g, int aff);
+void	sb(t_game *g, int aff);
+void	ss(t_game *g, int aff);
+void	pa(t_game *g, int aff);
+void	pb(t_game *g, int aff);
+void	ra(t_game *g, int aff);
+void	rb(t_game *g, int aff);
+void	rr(t_game *g, int aff);
+void	rra(t_game *g, int aff);
+void	rrb(t_game *g, int aff);
+void	rrr(t_game *g, int aff);
 
 #endif

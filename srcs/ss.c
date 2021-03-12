@@ -12,9 +12,9 @@
 
 #include "../inc/header.h"
 
-void	ss(t_game *g)
+void	ss(t_game *g, int aff)
 {
-	sa(g);
-	sb(g);
+	sa(g, aff);
+	sb(g, aff);
 }
 

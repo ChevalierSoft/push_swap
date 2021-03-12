@@ -12,12 +12,14 @@
 
 #include "../inc/header.h"
 
-void	sa(t_game *g)
+void	sa(t_game *g, int aff)
 {
 	void	*ref;
 
 	if (!g->a || !g->a->next)
 		return ;
+	if (aff)
+		ft_print("sa\n");
 	ref = g->a->content;
 	g->a->content = g->a->next->content;
 	g->a->next->content = ref;

@@ -12,12 +12,14 @@
 
 #include "../inc/header.h"
 
-void	pa(t_game *g)
+void	pa(t_game *g, int aff)
 {
 	void	*next_b;
 
 	if (!g->b)
 		return ;
+	if (aff)
+		ft_print("pa\n");
 	next_b = g->b->next;
 	g->b->next = NULL;
 	ft_lstadd_front(&g->a, g->b);

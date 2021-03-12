@@ -12,9 +12,9 @@
 
 #include "../inc/header.h"
 
-void	rr(t_game *g)
+void	rr(t_game *g, int aff)
 {
-	ra(g);
-	rb(g);
+	ra(g, aff);
+	rb(g, aff);
 }
 

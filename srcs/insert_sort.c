@@ -46,27 +46,22 @@ void	ra_switch(t_game *g, int pt)
 	i = pt;
 	while (i-- > 0) //
 	{
-		ra(g);
-		printf("ra\n");
+		ra(g, 1);
 	}
-	pb(g);
-	printf("pb\n");
+	pb(g, 1);
 	//printf("endpoint : %d\n", endpoint);
 	
 	i = pt - endpoint;
 	//printf("pt - ep: %d\n", pt - endpoint);
 	while (i-- > 0)
 	{
-		rra(g);
-		printf("rra\n");
+		rra(g, 1);
 	}
-	pa(g);
-	printf("pa\n");
+	pa(g, 1);
 	i = endpoint;
 	while (i-- > 0)
 	{
-		rra(g);
-		printf("rra\n");
+		rra(g, 1);
 	}
 }
 
