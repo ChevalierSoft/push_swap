@@ -41,7 +41,8 @@ void	display_lists(t_game *g)
 	//system("clear");
 	printf("operation n. %d\n", g->cpt);
 	printf("     a      |      b\n");
-	printf("—————————————————————————\n");
+	// printf("—————————————————————————\n");
+	printf("-------------------------\n");
 	while (a || b)
 	{
 		ft_memset(panel, ' ', 26);

@@ -14,7 +14,8 @@
 
 void	sort_stack(t_game *g)
 {
-	//dumb_sort(g);
-	insert_sort(g);
+	// dumb_sort(g);
+	// insert_sort(g);
+	dumb_sort2(g);
 }
 

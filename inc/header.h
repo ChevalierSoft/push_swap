@@ -18,13 +18,28 @@
 
 typedef t_list t_stack;
 
+typedef struct s_item
+{
+	int			v;
+	int			p;
+}				t_item;
+
+typedef struct s_target
+{
+	int			lg;
+	int			p;
+}				t_target;
+
 typedef struct s_game
 {
-	t_stack	*a;
-	t_stack	*b;
-	int		v;
-	int		cpt;
-}			t_game;
+	t_stack		*a;
+	t_stack		*b;
+	int			v;
+	int			cpt;
+	int			a_size;
+	int			a_initial_size;
+	int			mid;
+}				t_game;
 
 // check_args.c
 int		check_args(t_game *g, int argc, char **argv);
@@ -40,6 +55,7 @@ void	display_lists(t_game *g);
 
 // dumb_sort.c
 void	dumb_sort(t_game *g);
+void	dumb_sort2(t_game *g);
 
 // fill_stack.c
 int		fill_stack(t_game *g, int argc, char **argv);
