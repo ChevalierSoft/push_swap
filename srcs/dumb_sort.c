@@ -51,6 +51,7 @@ void	dumb_sort(t_game *g)
 	{
 		pa(g, 1);
 	}
+	display_lists(g);
 }
 
 void	find_lower(t_game *g, t_item *lower)
@@ -102,9 +103,9 @@ void	find_lower_greater(t_game *g, t_item *lower, t_item *greater)
 	t_stack	*a;
 	int		pos;
 
-	lower->p = 0;
+	lower->p = -1;
 	// lower->v = *((int *)a->content);
-	greater->p = 0;
+	greater->p = -1;
 	// greater->v = *((int *)a->content);
 	lower->v = INT32_MAX;
 	greater->v = INT32_MIN;
@@ -127,8 +128,8 @@ void	find_lower_greater(t_game *g, t_item *lower, t_item *greater)
 		a = a->next;
 		pos++;
 	}
-	printf("lower : v = %d, p = %d\n", lower->v, lower->p);
-	printf("greater : v = %d, p = %d\n", greater->v, greater->p);
+	// printf("lower : v = %d, p = %d\n", lower->v, lower->p);
+	// printf("greater : v = %d, p = %d\n", greater->v, greater->p);
 }
 
 void	get_closest(t_game *g, t_item *lo, t_item *gr, t_target *t)
@@ -161,6 +162,17 @@ void	get_closest(t_game *g, t_item *lo, t_item *gr, t_target *t)
 	}
 	// get faster way between both
 	// printf("(lo_dist < gr_dist) => (%d < %d)\n", lo_dist, gr_dist);
+	if (lo_dist == -1)
+	{
+		t->lg = 1;
+		t->p = gr_dist * gr_neg;
+		return ;
+	}
+	else if (gr_dist == -1)
+	{
+		t->lg = 0;
+		t->p = lo_dist * lo_neg;
+	}
 	if (lo_dist < gr_dist)
 	{
 		t->lg = 0;
@@ -171,7 +183,7 @@ void	get_closest(t_game *g, t_item *lo, t_item *gr, t_target *t)
 		t->lg = 1;
 		t->p = gr_dist * gr_neg;
 	}
-	printf("target : lg = %d, p = %d\n", t->lg, t->p);
+	// printf("target : lg = %d, p = %d\n", t->lg, t->p);
 }
 
 void	switcher_up_down(t_game *g, t_target *t)
@@ -190,16 +202,7 @@ void	switcher_up_down(t_game *g, t_target *t)
 	pb(g, 1);
 	// printf("target : lg = %d, p = %d\n", t->lg, t->p);
 	if (t->lg == 1)
-	{
 		rb(g, 1);
-	}
-	// if (g->a_initial_size - g->a_size == 0)
-	// {
-	// 	if (*((int *)g->b->content) > *((int *)g->b->next->content))
-	// 	{
-	// 		rb(g, 1);
-	// 	}
-	// }
 }
 
 static inline
@@ -243,7 +246,7 @@ int	lst_mid(t_stack	*sk, int sk_size)
 	bubble_sort(sorted_array, sk_size);
 	res = sorted_array[sk_size / 2];
 	free(sorted_array);
-	printf("mid : %d\n", res);
+	// printf("mid : %d\n", res);
 	return (res);
 }
 
@@ -260,8 +263,8 @@ void	dumb_sort2(t_game *g)
 	g->a_initial_size = g->a_size;
 
 	g->mid = lst_mid(g->a, g->a_size);
-g->v = 1;
-		display_lists(g);
+	g->v = 1;
+	// display_lists(g);
 	while (g->a)
 	{
 		find_lower_greater(g, &lower, &greater);
@@ -272,10 +275,11 @@ g->v = 1;
 		switcher_up_down(g, &t);
 
 		g->v = 1;
-		display_lists(g);
+		// display_lists(g);
 		g->a_size--;
 	}
-	// while (g->b)
-	// 	pa(g, 1);
+	// ft_help();
+	while (g->b)
+		pa(g, 1);
+	// display_lists(g);
 }
-
