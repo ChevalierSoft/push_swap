@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 05:39:30 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/26 06:22:44 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ void	sort_2(t_game *g);
 
 // sort_3.c
 void	sort_3(t_game *g);
+
+// sort_5.c
+void	sort_5(t_game *g);
 
 // listen.c
 void	listen(t_game *g);
