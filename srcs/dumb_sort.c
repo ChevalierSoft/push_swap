@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:34:31 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/24 03:43:24 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ void	find_lower_greater(t_game *g, t_item *lower, t_item *greater)
 		a = a->next;
 		pos++;
 	}
-	// printf("lower : v = %d, p = %d\n", lower->v, lower->p);
-	// printf("greater : v = %d, p = %d\n", greater->v, greater->p);
+	printf("lower : v = %d, p = %d\n", lower->v, lower->p);
+	printf("greater : v = %d, p = %d\n", greater->v, greater->p);
 }
 
 void	get_closest(t_game *g, t_item *lo, t_item *gr, t_target *t)
@@ -275,11 +275,11 @@ void	dumb_sort2(t_game *g)
 		switcher_up_down(g, &t);
 
 		g->v = 1;
-		// display_lists(g);
+		display_lists(g);
 		g->a_size--;
 	}
 	// ft_help();
 	while (g->b)
 		pa(g, 1);
-	// display_lists(g);
+	display_lists(g);
 }

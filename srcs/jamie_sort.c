@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   jamie_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 05:13:30 by dait-atm         ###   ########.fr       */
+/*   Created: 2021/03/26 05:10:17 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/03/26 05:43:52 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-void	sort_stack(t_game *g)
+void	jamie_sort(t_game *g)
 {
-	//dumb_sort(g);
-	// insert_sort(g);
-	//dumb_sort2(g);
-	jamie_sort(g);
+	if (g->argc < 2)
+		return ;
+	else if (g->argc == 2)
+		sort_2(g);
+	else if (g->argc <= 3)
+		sort_3(g);
 }
-

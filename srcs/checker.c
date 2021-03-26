@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 12:26:38 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/26 05:29:30 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	t_game	g;
 
-	game_init(&g);
+	game_init(&g, argc);
 	if (check_args(&g, argc, argv))
 		return (1);
 	if (fill_stack(&g, argc, argv))
