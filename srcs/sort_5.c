@@ -6,12 +6,12 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 06:22:52 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 09:18:40 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/27 09:03:40 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
-
+/*
 void 	sort_5(t_game *g)
 {
 	int i;
@@ -57,5 +57,46 @@ void 	sort_5(t_game *g)
 			ra(g, 1);
 		i++;
 	}
+}
+*/
+
+int	find_1st_lowest(t_game *g)
+{
+	t_stack	*sk;
+	t_stack	*tmp;
+	int		lowest;
+	int		i;
+
+	sk = g->a;
+	tmp = g->a;
+	lowest = 0;
+	i = 0;
+	while (sk)
+	{
+		if (*((int *)sk->content) < *((int *)tmp->content))
+		{
+			tmp = sk;
+			lowest = i;
+		}
+		i++;
+		sk = sk->next;
+	}
+	return (lowest);
+}
+
+void sort_5(t_game *g)
+{
+	int	low1;
+	int low2;
+
+	low1 = find_1st_lowest(g);
+	printf("lowest : %d\n", low1);
+	low2 = find_2nd_lowest(g);
+	printf("lowest : %d\n", low2);
+
+	// 1 - push both lowers to b, taking the fastest way
+	// 2 - sort using sort_3 algo or make specific ss if g->b < g->b->next
+	// pa pa
+	
 }
 
