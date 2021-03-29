@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:10:17 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 08:23:39 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 06:54:59 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	jamie_sort(t_game *g)
 		sort_2(g);
 	else if (g->argc <= 3)
 		sort_3(g);
-	else if (g->argc <= 5)
+	else if (g->argc == 5)
 		sort_5(g);
 }
 
