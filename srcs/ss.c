@@ -15,6 +15,6 @@
 void	ss(t_game *g, int aff)
 {
 	sa(g, aff);
+	g->cpt--;
 	sb(g, aff);
 }
-

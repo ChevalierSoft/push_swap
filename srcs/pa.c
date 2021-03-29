@@ -24,5 +24,5 @@ void	pa(t_game *g, int aff)
 	g->b->next = NULL;
 	ft_lstadd_front(&g->a, g->b);
 	g->b = next_b;
+	g->cpt++;
 }
-

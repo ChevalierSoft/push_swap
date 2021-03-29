@@ -56,12 +56,11 @@ void	listen(t_game *g)
 	while (get_next_line(0, &l) >= 1)
 	{
 		//printf("%s\n", l);
-		g->cpt++;
 		check_instruction(g, l);
 		free(l);
 		display_lists(g);
 	}
-	printf("_ %s\n", l);
+	// printf("_ %s\n", l);
 	if (*l != '\0')
 	{
 		free(l);

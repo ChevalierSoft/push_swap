@@ -152,6 +152,9 @@ void	sort_5(t_game *g)
 	int	low1;
 	int low2;
 
+	/// debug
+	// g->v = 1;
+
 	/// 1 - push both lowers to b, taking the fastest way
 	low1 = find_1st_lowest(g);
 	//printf("1st lowest : %d\n", low1);
@@ -168,6 +171,6 @@ void	sort_5(t_game *g)
 	pa(g, 1);
 	pa(g, 1);
 
-	//display_lists(g);
+	// display_lists(g);
 }
 

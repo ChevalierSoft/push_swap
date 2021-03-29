@@ -24,5 +24,5 @@ void	ra(t_game *g, int aff)
 	g->a = g->a->next;
 	node->next = NULL;
 	ft_lstadd_back(&g->a, node);
+	g->cpt++;
 }
-

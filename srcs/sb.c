@@ -23,5 +23,6 @@ void	sb(t_game *g, int aff)
 	ref = g->b->content;
 	g->b->content = g->b->next->content;
 	g->b->next->content = ref;
+	g->cpt++;
 }
 

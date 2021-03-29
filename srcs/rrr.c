@@ -15,6 +15,6 @@
 void	rrr(t_game *g, int aff)
 {
 	rra(g, aff);
+	g->cpt--;
 	rrb(g, aff);
 }
-

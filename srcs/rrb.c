@@ -24,5 +24,5 @@ void	rrb(t_game *g, int aff)
 	node->next->next = g->b;
 	g->b = node->next;
 	node->next = NULL;
+	g->cpt++;
 }
-
