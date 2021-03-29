@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 10:44:21 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:28:26 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	is_sorted(t_game *g)
 
 	if (g->b)
 		return (0);
-	a = g->a;	
+	a = g->a;
 	while (a->next)
 	{
 		if (*((int *)a->content) >= *((int *)a->next->content))
@@ -27,4 +27,3 @@ int	is_sorted(t_game *g)
 	}
 	return (1);
 }
-

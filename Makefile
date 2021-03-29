@@ -40,7 +40,7 @@ sort_5.c \
 sort_stack.c \
 dumb_sort.c \
 insert_sort.c \
-jamie_sort.c \
+sanic_sort.c \
 )
 
 CH_SRCS 	+= $(SHARED_SRCS)

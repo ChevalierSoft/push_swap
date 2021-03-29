@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/27 07:58:21 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:53:19 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int		is_sorted(t_game *g);
 // insert_sort.c
 void	insert_sort(t_game *g);
 
-// jamie_sort.c
-void	jamie_sort(t_game *g);
+// sanic_sort.c
+void	sanic_sort(t_game *g);
 
 // sort_2.c
 void	sort_2(t_game *g);

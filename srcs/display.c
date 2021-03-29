@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/12 10:52:01 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:52:52 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	fill_panel(t_stack *sk, char *panel)
 void	display_lists(t_game *g)
 {
 	unsigned char	panel[27];
-	t_stack	*a;
-	t_stack	*b;
+	t_stack			*a;
+	t_stack			*b;
 
 	if (!g->v)
 		return ;
@@ -41,7 +41,6 @@ void	display_lists(t_game *g)
 	//system("clear");
 	printf("operation n. %d\n", g->cpt);
 	printf("     a      |      b\n");
-	// printf("—————————————————————————\n");
 	printf("-------------------------\n");
 	while (a || b)
 	{
@@ -62,4 +61,3 @@ void	display_lists(t_game *g)
 	}
 	//usleep(300000);
 }
-

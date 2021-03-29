@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   jamie_sort.c                                       :+:      :+:    :+:   */
+/*   sanic_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:10:17 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 06:54:59 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:54:27 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-void	jamie_sort(t_game *g)
+void	sanic_sort(t_game *g)
 {
 	if (g->argc < 2)
 		return ;
@@ -23,4 +23,3 @@ void	jamie_sort(t_game *g)
 	else if (g->argc == 5)
 		sort_5(g);
 }
-

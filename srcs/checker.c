@@ -6,13 +6,13 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 05:29:30 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:52:01 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_game	g;
 

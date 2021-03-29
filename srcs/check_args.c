@@ -6,15 +6,15 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/11 09:08:16 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:51:29 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-int check_args(t_game *g, int argc, char **argv)
+int	check_args(t_game *g, int argc, char **argv)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 1;
@@ -37,4 +37,3 @@ int check_args(t_game *g, int argc, char **argv)
 	}
 	return (0);
 }
-
