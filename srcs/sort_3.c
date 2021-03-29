@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:34:21 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/26 08:23:32 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 06:46:14 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	sort_3(t_game *g)
 	else if (b < a && a < c)		// b < a < c
 		sa(g, 1);
 	else if (b < c && c < a)		// b < c < a
-		rra(g, 1);
+		ra(g, 1);
 	else if (c < a && a < b)		// c < a < b
-		ra(g, a);
+		rra(g, a);
 	else if (c < b && b < a)		// c < b < a
 	{
 		sa(g, 1);
