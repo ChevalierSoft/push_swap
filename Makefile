@@ -37,6 +37,7 @@ push_swap.c \
 sort_2.c \
 sort_3.c \
 sort_5.c \
+sort_100.c \
 sort_stack.c \
 dumb_sort.c \
 insert_sort.c \

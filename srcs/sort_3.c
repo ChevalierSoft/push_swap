@@ -6,21 +6,21 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:34:21 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 06:46:14 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:32:55 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-void	sort_3(t_game *g)
+void	sort_3(t_game *g, t_stack *sk)
 {
 	int a;
 	int b;
 	int c;
 
-	a = *((int *)g->a->content);
-	b = *((int *)g->a->next->content);
-	c = *((int *)g->a->next->next->content);
+	a = *((int *)sk->content);
+	b = *((int *)sk->next->content);
+	c = *((int *)sk->next->next->content);
 	if (a < b && b < c)				// a < b < c
 		return ;
 	else if (a < c && c < b)		//a < c < b
@@ -40,4 +40,3 @@ void	sort_3(t_game *g)
 		rra(g, 1);
 	}
 }
-

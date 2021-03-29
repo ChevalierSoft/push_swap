@@ -6,17 +6,11 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 06:22:52 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 08:23:12 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:37:26 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
-
-void	vec2d_int_init(int a[2], int i, int j)
-{
-	a[0] = i;
-	a[1] = j;
-}
 
 void	straff_to(t_game *g, int loc)
 {
@@ -32,6 +26,13 @@ void	straff_to(t_game *g, int loc)
 		f = &ra;
 	while (i--)
 		f(g, 1);
+}
+
+static inline
+void	vec2d_int_init(int a[2], int i, int j)
+{
+	a[0] = i;
+	a[1] = j;
 }
 
 void	push_2_lowest(t_game *g, int l1, int l2)
@@ -83,12 +84,12 @@ void	sort_3_for_5(t_game *g)
 		}
 		else
 		{
-			sort_3(g);
+			sort_3(g, g->a);
 			sb(g, 1);
 		}
 	}
 	else
-		sort_3(g);
+		sort_3(g, g->a);
 }
 
 void	sort_5(t_game *g)

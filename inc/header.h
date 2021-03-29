@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 10:53:19 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:18:30 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ void	dumb_sort2(t_game *g);
 int		fill_stack(t_game *g, int argc, char **argv);
 
 // find_lowest.c
-int	find_1st_lowest(t_game *g);
-int	find_2nd_lowest(t_game *g, int n);
+int		find_1st_lowest(t_game *g);
+int		find_2nd_lowest(t_game *g, int n);
+int		find_3rd_lowest(t_game *g, int n, int m);
 
 // game_init.c
 void	game_init(t_game *g, int argc);
@@ -73,18 +74,16 @@ int		is_sorted(t_game *g);
 
 // insert_sort.c
 void	insert_sort(t_game *g);
-
 // sanic_sort.c
 void	sanic_sort(t_game *g);
-
 // sort_2.c
 void	sort_2(t_game *g);
-
 // sort_3.c
-void	sort_3(t_game *g);
-
+void	sort_3(t_game *g, t_stack *sk);
 // sort_5.c
 void	sort_5(t_game *g);
+//sort_100.c
+void	sort_100(t_game *g);
 
 // listen.c
 void	listen(t_game *g);
