@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 06:22:52 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 07:02:26 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/29 08:23:12 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,12 +124,14 @@ void	sort_3_for_5(t_game *g)
 	if (*((int *)g->b->content) < *((int *)g->b->next->content))
 	{
 		if (*((int *)g->a->content) < *((int *)g->a->next->next->content)
-			&& *((int *)g->a->next->next->content) < *((int *)g->a->next->content))
+			&& *((int *)g->a->next->next->content) <
+			*((int *)g->a->next->content))
 		{
 			ss(g, 1);
 			ra(g, 1);
 		}
-		else if (*((int *)g->a->next->next->content) < *((int *)g->a->next->content)
+		else if (*((int *)g->a->next->next->content) <
+			*((int *)g->a->next->content)
 			&& *((int *)g->a->next->content) < *((int *)g->a->content))
 		{
 			ss(g, 1);
@@ -150,14 +152,11 @@ void	sort_5(t_game *g)
 	int	low1;
 	int low2;
 
-	// debug
-	g->v = 1;
-
 	/// 1 - push both lowers to b, taking the fastest way
 	low1 = find_1st_lowest(g);
-	printf("1st lowest : %d\n", low1);
+	//printf("1st lowest : %d\n", low1);
 	low2 = find_2nd_lowest(g, low1);
-	printf("2nd lowest : %d\n", low2);
+	//printf("2nd lowest : %d\n", low2);
 	push_2_lowest(g, low1, low2);
 	//display_lists(g);
 
@@ -169,6 +168,6 @@ void	sort_5(t_game *g)
 	pa(g, 1);
 	pa(g, 1);
 
-	display_lists(g);
+	//display_lists(g);
 }
 
