@@ -61,6 +61,10 @@ void	dumb_sort2(t_game *g);
 // fill_stack.c
 int		fill_stack(t_game *g, int argc, char **argv);
 
+// find_lowest.c
+int	find_1st_lowest(t_game *g);
+int	find_2nd_lowest(t_game *g, int n);
+
 // game_init.c
 void	game_init(t_game *g, int argc);
 

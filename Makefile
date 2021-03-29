@@ -22,7 +22,6 @@ fill_stack.c \
 game_init.c \
 quit.c \
 \
-\
 display.c \
 )
 
@@ -33,6 +32,7 @@ listen.c \
 )
 
 PS_SRCS		= $(addprefix srcs/, \
+find_lowest.c \
 push_swap.c \
 sort_2.c \
 sort_3.c \
