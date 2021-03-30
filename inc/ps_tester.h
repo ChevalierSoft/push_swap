@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sanic_sort.c                                       :+:      :+:    :+:   */
+/*   ps_tester.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 05:10:17 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/30 08:15:47 by dait-atm         ###   ########.fr       */
+/*   Created: 2021/03/30 08:27:27 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/03/30 10:56:18 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/header.h"
+#ifndef PS_TESTER_H
+# define PS_TESTER_H
 
-void	sanic_sort(t_game *g)
-{
-	if (g->argc < 2)
-		return ;
-	else if (g->argc == 2)
-		sort_2(g);
-	else if (g->argc == 3)
-		sort_3(g, g->a);
-	else if (g->argc == 4)
-		sort_4(g);
-	else if (g->argc == 5)
-		sort_5(g);
-	else
-		dumb_sort_100(g);
-		//sort_100(g);
-}
+# include <stdio.h>
+# include <stdlib.h>
+# include <errno.h>
+# include <sys/wait.h>
+# include <fcntl.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <time.h>
+# include <unistd.h>
+# include <string.h>
+
+#endif
