@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/30 00:56:16 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/30 08:01:15 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void	sanic_sort(t_game *g);
 void	sort_2(t_game *g);
 // sort_3.c
 void	sort_3(t_game *g, t_stack *sk);
+// sort_4.c
+void	sort_4(t_game *g);
 // sort_5.c
 void	sort_5(t_game *g);
 void	push_2_lowest(t_game *g, int l1, int l2);

@@ -36,6 +36,7 @@ find_lowest.c \
 push_swap.c \
 sort_2.c \
 sort_3.c \
+sort_4.c \
 sort_5.c \
 sort_100.c \
 sort_stack.c \
