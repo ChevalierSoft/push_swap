@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:28:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/10 18:19:44 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/30 02:51:25 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	pb(t_game *g, int aff)
 	ft_lstadd_front(&g->b, g->a);
 	g->a = next_a;
 	g->cpt++;
+	g->a_size--;
 }

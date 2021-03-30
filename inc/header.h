@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 12:18:30 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/30 00:56:16 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,21 @@ void	sort_2(t_game *g);
 void	sort_3(t_game *g, t_stack *sk);
 // sort_5.c
 void	sort_5(t_game *g);
+void	push_2_lowest(t_game *g, int l1, int l2);
 //sort_100.c
 void	sort_100(t_game *g);
+
+// sort_stack
+void	sort_stack(t_game *g);
+
+// straff_to.c
+void	straff_to(t_game *g, int loc);
 
 // listen.c
 void	listen(t_game *g);
 
 // quit.c
 void	quit(t_game *g, int err);
-
-// sort_stack
-void	sort_stack(t_game *g);
 
 // operator's file
 void	sa(t_game *g, int aff);

@@ -39,6 +39,7 @@ sort_3.c \
 sort_5.c \
 sort_100.c \
 sort_stack.c \
+straff_to.c \
 dumb_sort.c \
 insert_sort.c \
 sanic_sort.c \
