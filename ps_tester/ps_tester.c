@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 08:26:04 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/31 07:18:59 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/31 08:19:24 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,12 @@ char	*arg_str(int *ar, int size)
 
 void	str_clear(char **as)
 {
-	//int	i;
+	int	i;
 
-	//i = 0;
-	//while ((as)[i])
-	//	free((as)[i++]);
-	free(as[0]);
+	i = 0;
+	while ((as)[i])
+		free((as)[i++]);
+	//free(as[0]);
 }
 
 void	aff_string(char **as, int size)
@@ -151,7 +151,11 @@ int	exec_ch(char *as, char **env, int cpt)
 
 	strncpy(as + 2, "checker  ", 9);
 
-	f = fopen("tmp.log", "r"); // need a test if exist
+	if (!(f = fopen("tmp.log", "r")))
+	{
+		dprintf(2, "can't open tmp file\n");
+		return (1);
+	}
 
 	pipe(sout);
 	ret = dup(1);
@@ -167,34 +171,56 @@ int	exec_ch(char *as, char **env, int cpt)
 	fclose(f);
 
 	read(sout[0], l, 16);
-	//dup2(1, sout[1]);
-	dup2(1, ret);
+	dup2(ret, 1);
 	close(ret);
 	close(sout[0]);
 	close(sout[1]);
 
-	dprintf(2, "result : %s\b | %d\n", l, cpt);
-	// traiter le retour OK KO Error
 	if (strncmp(l, "OK\n", 3))
 	{
 		f = fopen("tmp.log", "a");
-		fprintf(f, "\n\nerror found : \n%s\ncommand used : \n%s\n", l, as);
+		fprintf(f, "\n\nreturn : \n%s\ncommand used : \n%s\n", l, as);
 		fclose(f);
-		dprintf(2, "Error or KO: see 'tmp.log' to find more inforamtions\n");
+		dprintf(2, "KO or Error : see 'tmp.log' to find more inforamtions\n");
 		return (1);
 	}
+	printf("OK | %d\n", cpt);
 	remove("tmp.log");
 	return (0);
 }
 
-#define N 3
+#define N 10
+
+void	show_stat(int *cpt)
+{
+	FILE	*f;
+	double	moy;
+	int		i;
+	
+	i = 0;
+	moy = 0;
+	errno = 0;
+	while (i < N)
+		moy += cpt[i++];
+	moy /= (double)N;
+	if (errno == ERANGE)
+		moy = -1;
+	f = fopen("index.html", "w");
+	fprintf(f, "<!DOCTYPE html>	<meta charset=\"ISO-8859-1\">	<head> <style> body {background-color:#222;color:#ffccff;margin-left: auto; margin-right: auto; width: 10em;} </style> </head> <body>\n");
+	fprintf(f, "<h2> oui </h2>\n");
+	if (moy == -1)
+		fprintf(f, "avg : ERANGE\n");
+	else
+		fprintf(f, "avg : %f\n", moy);
+}
 
 void	main(int argc, char **argv, char **env)
 {
 	int		size;
-	int		*ar;
+	int		*ar[N];
 	char	*as[N];
 	int		cpt[N];
+	int		i;
 
 	if (argc < 2)
 		exit(1);
@@ -206,18 +232,24 @@ void	main(int argc, char **argv, char **env)
 
 	// loop N time and store the stats in cpt
 	memset(cpt, 0, sizeof(int) * N);
-	ar = init_array(size);
-	//aff(ar, size);
+	memset(as, 0, sizeof(char *) * N);
 
-	as[0] = arg_str(ar, size);
-	as[1] = NULL;
+	i = 0;
+	while (i < N)
+	{
+		ar[i] = init_array(size);
+		//aff(ar[i], size);
 
-	free(ar);
-	//aff_string(as, size);
+		as[i] = arg_str(ar[i], size);
+		free(ar[i]);
+		//aff_string(as, size);
 
-	exec_ps(as[0], env, &cpt[0]);
+		exec_ps(as[i], env, &cpt[i]);
 
-	exec_ch(as[0], env, cpt[0]);
+		exec_ch(as[i], env, cpt[i]);
 
-	str_clear(as);
+		i++;
+	}
+	show_stat(cpt);
+	//str_clear(as);
 }
