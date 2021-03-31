@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 08:26:04 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/31 08:19:24 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/03/31 10:30:29 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,24 +194,16 @@ int	exec_ch(char *as, char **env, int cpt)
 void	show_stat(int *cpt)
 {
 	FILE	*f;
-	double	moy;
 	int		i;
-	
+
+	f = fopen("operations_data.js", "w");
+	fprintf(f, "var array = [\n");
 	i = 0;
-	moy = 0;
-	errno = 0;
-	while (i < N)
-		moy += cpt[i++];
-	moy /= (double)N;
-	if (errno == ERANGE)
-		moy = -1;
-	f = fopen("index.html", "w");
-	fprintf(f, "<!DOCTYPE html>	<meta charset=\"ISO-8859-1\">	<head> <style> body {background-color:#222;color:#ffccff;margin-left: auto; margin-right: auto; width: 10em;} </style> </head> <body>\n");
-	fprintf(f, "<h2> oui </h2>\n");
-	if (moy == -1)
-		fprintf(f, "avg : ERANGE\n");
-	else
-		fprintf(f, "avg : %f\n", moy);
+	while (i < N - 1)
+		fprintf(f, "{ x: %d, y: %d},\n", i, cpt[i++]);
+	fprintf(f, "{ x: %d, y: %d}\n", i, cpt[i]);
+	fprintf(f, "]\n");
+	fclose(f);
 }
 
 void	main(int argc, char **argv, char **env)

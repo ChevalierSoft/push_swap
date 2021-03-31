@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- import data from ps_tester -->
+<script type="text/javascript" src="operations_data.js"></script>
+<!-- make an array with it -->
+<script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "dark2",
+	title: {
+		text: "Number of operations"
+	},
+	axisX: {
+		title: "index of iterations",
+		titleFontColor: "#FFCCFF",
+		minimum: 0
+	},
+	axisY: {
+		title: "Number of operations",
+		titleFontColor: "#FFCCFF",
+		includeZero: true
+	},
+	data: [{
+		indexLabelFontColor: "darkSlateGray",
+		name: "views",
+		type: "area",
+		yValueFormatString: "#,##0.0mn",
+		dataPoints: array
+	}]
+	});
+	chart.render();
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 500px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
