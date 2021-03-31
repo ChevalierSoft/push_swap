@@ -3,4 +3,5 @@
 *.exe
 checker
 push_swap
+pt
 .vscode
