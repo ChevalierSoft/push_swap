@@ -16,7 +16,7 @@ void	new_rand_req(int *ar, int j, int *r)
 {
 	int	i;
 
-	*r = rand() % 1000;	// MAXIMUM here
+	*r = rand();// % 1000;	// MAXIMUM here
 	i = 0;
 	while (i < j)
 	{
@@ -184,26 +184,69 @@ int	exec_ch(char *as, char **env, int cpt)
 		dprintf(2, "KO or Error : see 'tmp.log' to find more inforamtions\n");
 		return (1);
 	}
-	printf("OK | %d\n", cpt);
+	// printf("OK | %d\n", cpt);
 	remove("tmp.log");
 	return (0);
 }
 
-#define N 10
+
+# define N 100
+
+void	min_max_avg(unsigned long long t[3], int *cpt)
+{
+	int	i;
+
+	t[0] = 0;
+	t[1] = 0;
+	t[2] = cpt[0];
+	i = 1;
+	while (i < N)
+	{
+		if (cpt[i] < cpt[t[0]])
+		{
+			t[0] = i;
+		}
+		else if (cpt[i] > cpt[t[1]])
+		{
+			t[1] = i;
+		}
+		t[2] += cpt[i];
+		i++;
+	}
+	if (errno == ERANGE)
+		t[2] = 0;
+	else
+		t[2] = (unsigned long long)(t[2] / (int)N);
+}
 
 void	show_stat(int *cpt)
 {
-	FILE	*f;
-	int		i;
+	FILE				*f;
+	int					i;
+	unsigned long long	t[3];
 
+	min_max_avg(t, cpt);
 	f = fopen("operations_data.js", "w");
+
+	fprintf(f, "var operations_minimum = %d;\n", cpt[t[0]]);
+	fprintf(f, "var operations_maximum = %d;\n", cpt[t[1]]);
+	fprintf(f, "var operations_avg = %lld;\n", t[2]);
+
 	fprintf(f, "var array = [\n");
-	i = 0;
-	while (i < N - 1)
-		fprintf(f, "{ x: %d, y: %d},\n", i, cpt[i++]);
+	i = -1;
+	while (++i < N - 1)
+	{
+		if (i == t[0])
+			fprintf(f, "{ x: %d, y: %d, indexLabel: \"\u2193\", markerColor: \"cyan\", markerType: \"cross\"},\n", i, cpt[i]);
+		else if (i == t[1])
+			fprintf(f, "{ x: %d, y: %d, indexLabel: \"\u2191\", markerColor: \"yellow\", markerType: \"cross\"},\n", i, cpt[i]);
+		else
+			fprintf(f, "{ x: %d, y: %d},\n", i, cpt[i]);
+	}
 	fprintf(f, "{ x: %d, y: %d}\n", i, cpt[i]);
 	fprintf(f, "]\n");
 	fclose(f);
+	system("firefox ./index.html");
 }
 
 void	main(int argc, char **argv, char **env)
