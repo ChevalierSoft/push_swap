@@ -6,7 +6,7 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:04:23 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/02/16 08:34:52 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/04/01 08:31:04 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdint.h>
-
-# if POSIX == 1
-#  include <unistd.h>
-# else
-#  include <io.h>
-# endif
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 64
