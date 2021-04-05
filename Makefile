@@ -40,6 +40,7 @@ dumb_sort2.c \
 dumb_sort_100.c \
 insert_sort.c \
 find_lowest.c \
+get_n_limits.c \
 push_swap.c \
 sort_2.c \
 sort_3.c \

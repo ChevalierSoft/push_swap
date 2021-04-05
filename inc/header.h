@@ -16,6 +16,8 @@
 # include "../libft/libft.h"
 # include <errno.h>
 
+#define N 5
+
 typedef t_list t_stack;
 
 typedef struct s_item
@@ -73,6 +75,9 @@ int		find_3rd_lowest(t_game *g, int n, int m);
 
 // game_init.c
 void	game_init(t_game *g, int argc);
+
+// get_n_limits.c
+void	get_n_limits(int q[N], t_game *g);
 
 // is_sorted.c
 int		is_sorted(t_game *g);
