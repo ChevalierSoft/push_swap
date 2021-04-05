@@ -56,7 +56,12 @@ void	display_lists(t_game *g);
 
 // dumb_sort.c
 void	dumb_sort(t_game *g);
+
+// dumb_sort2.c
 void	dumb_sort2(t_game *g);
+
+// dumb_sort_100.c
+void	dumb_sort_100(t_game *g);
 
 // fill_stack.c
 int		fill_stack(t_game *g, int argc, char **argv);

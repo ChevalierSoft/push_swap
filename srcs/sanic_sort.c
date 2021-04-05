@@ -24,8 +24,11 @@ void	sanic_sort(t_game *g)
 		sort_4(g);
 	else if (g->argc == 5)
 		sort_5(g);
-	else
-		//dumb_sort_100(g);
-		//sort_100(g);
+	else if (g->argc <= 20)
 		dumb_sort(g);
+	else
+		dumb_sort_100(g);
+		//sort_100(g);
+		//dumb_sort(g);
+		//dumb_sort2(g);
 }

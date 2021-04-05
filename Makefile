@@ -36,6 +36,7 @@ listen.c \
 
 PS_SRCS		= $(addprefix srcs/, \
 dumb_sort.c \
+dumb_sort2.c \
 dumb_sort_100.c \
 insert_sort.c \
 find_lowest.c \

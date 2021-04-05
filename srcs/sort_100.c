@@ -39,7 +39,7 @@ void	push_3_lowest(t_game *g, int *l, int n)
 		if ((ft_abs(l[i]) == ft_abs(lil[1]) && l[i] > 0)
 			|| ft_abs(l[i]) < ft_abs(lil[1]))
 		{
-			ft_help();
+			// ft_help();
 			lil[0] = i;
 			lil[1] = l[i];
 		}
