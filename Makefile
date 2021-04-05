@@ -91,4 +91,3 @@ fclean : clean
 re : fclean all
 
 .PHONY : all re clean fclean checker push_swap _libft
-
