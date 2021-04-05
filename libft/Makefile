@@ -25,6 +25,9 @@ RST_COLOR	= \033[0m
 
 SRCS		= \
 ft_bzero.c \
+ft_bubble_sort.c \
+ft_cmp.c \
+ft_swap.c \
 ft_isalnum.c \
 ft_isalpha.c \
 ft_isascii.c \
@@ -72,7 +75,6 @@ c2i.c \
 i2c.c \
 ft_nb_digit.c \
 get_next_line.c \
-ft_swap_float.c \
 ft_strdel_array.c \
 ft_print.c \
 ft_strcut.c \

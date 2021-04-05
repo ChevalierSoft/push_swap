@@ -90,8 +90,6 @@ char			*ft_itoa(int n);
 int				ft_atoi(const char *str);
 long long		ft_strtoll(const char *nptr, char **endptr, int base);
 
-void			ft_swap_float(float *a, float *b);
-
 size_t			ft_strlen(const char *str);
 size_t			ft_strlen_array(char **str);
 
@@ -158,6 +156,14 @@ void			ft_help(void);
 
 int				ft_nb_digit(int n);
 int				get_next_line(int fd, char **line);
+
+void			ft_bubble_sort(void *l, int s, int (*c)(void *, void *),
+					void (*sw)(void *, void *));
+
+int				ft_cmp_int(void *a, void *b);
+
+void			ft_swap_int(void *a, void *b);
+void			ft_swap_float(float *a, float *b);
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *n);

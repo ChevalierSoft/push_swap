@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_float.c                                    :+:      :+:    :+:   */
+/*   ft_cmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 17:32:29 by dait-atm          #+#    #+#             */
-/*   Updated: 2020/12/31 18:44:45 by dait-atm         ###   ########.fr       */
+/*   Created: 2021/04/05 08:13:29 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/04/05 08:13:32 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap_float(float *a, float *b)
+int	ft_cmp_int(void *va, void *vb)
 {
-	float	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	return (*((int *)va) - *((int *)vb));
 }
