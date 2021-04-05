@@ -14,6 +14,9 @@
 
 void	sanic_sort(t_game *g)
 {
+	if (is_sorted(g))
+		return ;
+
 	if (g->argc < 2)
 		return ;
 	else if (g->argc == 2)

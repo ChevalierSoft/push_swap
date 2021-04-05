@@ -26,11 +26,11 @@ game_init.c \
 quit.c \
 \
 display.c \
+is_sorted.c \
 )
 
 CH_SRCS		= $(addprefix srcs/, \
 checker.c \
-is_sorted.c \
 listen.c \
 )
 

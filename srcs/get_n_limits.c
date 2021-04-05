@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_n_limits.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/05 08:50:49 by dait-atm          #+#    #+#             */
+/*   Updated: 2021/04/05 08:50:51 by dait-atm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/header.h"
 
 static
@@ -35,7 +47,7 @@ void	get_n_limits(int q[N], t_game *g)
 	}
 	
 	// 2 - sort the array
-	ft_bubble_sort(d, size, &ft_cmp_int,&ft_swap_int);
+	ft_bubble_sort(d, size, &ft_cmp_int, &ft_swap_int);
 
 	// 3 - get N splits limits and free
 	i = 0;

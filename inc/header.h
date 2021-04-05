@@ -16,7 +16,7 @@
 # include "../libft/libft.h"
 # include <errno.h>
 
-#define N 5
+#define N 10
 
 typedef t_list t_stack;
 

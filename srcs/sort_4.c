@@ -24,5 +24,5 @@ void	sort_4(t_game *g)
 	sort_3(g, g->a);
 	g->v = 1;
 	pa(g, 1);
-	display_lists(g);
+	// display_lists(g);
 }
