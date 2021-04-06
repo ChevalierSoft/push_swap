@@ -24,7 +24,7 @@ void	aff(char *name, int *d, int size)
 	}
 }
 
-int	find_first_chunk(t_game *g, int l)
+int	find_first_chunk(t_game *g, int limit)
 {
 	t_stack	*a;
 	int		n[2];
@@ -36,7 +36,7 @@ int	find_first_chunk(t_game *g, int l)
 	i = 0;
 	while (a)
 	{
-		if (*((int *)a->content) < l)
+		if (*((int *)a->content) < limit)
 		{
 			n[0] = i;
 			break ;
@@ -47,22 +47,27 @@ int	find_first_chunk(t_game *g, int l)
 	n[1] = n[0];
 	while (a)
 	{
-		if (*((int *)a->content) < l)
+		if (*((int *)a->content) < limit)
 			n[1] = i;
 		i++;
 		a = a->next;
 	}
-
+	// g->a_size = ft_lstcount(g->a);
 	// printf("n0 : %d | n1 : %d\n", n[0], n[1]);
-	if (n[0] > g->a_size / 2)
+
+	// if (n[0] > (g->a_size / 2) + ( 1 - g->a_size % 2))
+	// 	n[0] -= g->a_size + (1 - g->a_size % 2);
+	// if (n[1] > (g->a_size / 2) + (1 - g->a_size % 2))
+	// 	n[1] -= (g->a_size)+ (1 - g->a_size % 2);
+	if (n[0] > (g->a_size / 2))
 		n[0] -= g->a_size;
-	if (n[1] > g->a_size / 2)
+	if (n[1] > (g->a_size / 2))
 		n[1] -= g->a_size;
 	// printf("n0 : %d | n1 : %d\n", n[0], n[1]);
 
 	if (ft_abs(n[0]) - ft_abs(n[1]) == 0)
 	{
-		if (n[0] > 0)
+		if (n[0] >= 0)
 			return (n[0]);
 		else
 			return (n[1]);
@@ -147,36 +152,7 @@ int	roll_lowest_greatest(t_game *g, t_item *lowest, t_item *greatest, int t)
 	return (lowest->p);
 }
 
-// void	roll_to(t_game *g,int mid, int t2)
-// {
-// 	t_stack	*b;
-// 	// int		t2;
-	
-// 	straff_to(g, t2, &rb, &rrb);
-	
-// }
-
-void	straff_to_2(t_game *g, int loc_a, int loc_b) 
-{ 
-	int		i;
-	void	(*f)(t_game *, int);
-
-	if (!loc_a) 
-		return ;
-	i = ft_abs(loc_a);
-	if (loc_a < 0)
-		f = &rra; 
-	else
-		f = &ra;
-	while (i--) 
-		f(g, 1);
-}
-
-// sans opti : 786
-// 1/2 opti  : 759
-// opt       : 741
-
-void	push_chunk(t_game *g, int *q, int l)
+void	push_chunk(t_game *g, int limit, int chunk_number)
 {
 	t_stack	*a;
 	int		t;
@@ -187,15 +163,17 @@ void	push_chunk(t_game *g, int *q, int l)
 	int		t2;
 	int		b_size;
 
-	j = g->a_initial_size / N;
+
+	// g->v = 1;
+	// display_lists(g);
+
+	j = g->a_initial_size / chunk_number;
 	a = g->a;
-	// j = 6;	//deb
-	while (j)
+	while (j && g->a)
 	{
-		t = find_first_chunk(g, q[l]);
+		t = find_first_chunk(g, limit);
 		// printf("t : %d\n", t);
-		
-		// printf("node : %d\n", *((int *)n->content));
+
 		if (g->b)
 		{
 			if (t < 0)
@@ -207,13 +185,11 @@ void	push_chunk(t_game *g, int *q, int l)
 			else
 				n = ft_lstgetnb(g->a, t);
 			t2 = roll_lowest_greatest(g, &lowest, &greatest, *((int *)n->content));
-			int		b_size;
 
 			b_size = ft_lstcount(g->b);
 			if (t2 > b_size / 2)
 				t2 -= b_size;
 			// printf("t : %d | t2 : %d\n", t, t2);
-
 
 			while (t < 0 && t2 < 0)
 			{
@@ -229,10 +205,11 @@ void	push_chunk(t_game *g, int *q, int l)
 			}
 			straff_to(g, t, &ra, &rra);
 			straff_to(g, t2, &rb, &rrb);
-
-			// straff_to_2(g, t, t2);
-			// roll_to(g, *((int *)g->a->content), t2);
+			g->v = 1;
+			// display_lists(g);
 		}
+		else
+			straff_to(g, t, &ra, &rra);
 
 		pb(g, 1);
 		j--;
@@ -242,22 +219,56 @@ void	push_chunk(t_game *g, int *q, int l)
 	}
 }
 
-void	dumb_sort_100(t_game *g)
+int find_greatest(t_stack *sk)
 {
-	int	q[N];
-	int	i;
-
-	get_n_limits(q, g);	// get N chunks limits
-	// aff("q", q, N);
+	t_item	t;
+	int		i;
 
 	i = 0;
-	// while (i < N)
-	// {
-		push_chunk(g, q, i);
+	t.p = 0;
+	t.v = *((int *)sk->content);
+	while (sk)
+	{
+		if (*((int *)sk->content) > t.v)
+		{
+			t.v = *((int *)sk->content);
+			t.p = i;
+		}
 		i++;
-	// }
-	// while (g->b)
-	// 	pa(g, 1);
-	g->v = 1;
-	display_lists(g);
+		sk = sk->next;
+	}
+	return (t.p);
+}
+
+void	dumb_sort_100(t_game *g, int chunk_number)
+{
+	int	*q;
+	int	i;
+
+	if (!(q = malloc(sizeof(int) * chunk_number)))
+		return ;
+	get_n_limits(q, g, chunk_number);	// get chunk_number chunks limits
+	// aff("q", q, chunk_number);
+	i = 0;
+	while (i < chunk_number)
+	{
+		push_chunk(g, q[i], chunk_number);
+		i++;
+	}
+	i = find_greatest(g->b);
+	if (i)
+	{
+		if (i > ft_lstcount(g->b)  / 2)
+			i -= ft_lstcount(g->b);
+		straff_to(g, i, &rb, &rrb);
+	}
+	while (g->b)
+		pa(g, 1);
+
+
+	// g->v = 1;
+	// display_lists(g);
+	// aff("q", q, chunk_number);
+
+	free(q);
 }

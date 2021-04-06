@@ -31,7 +31,7 @@ int	*stack_copy(t_stack *sk, int size)
 	return (d);
 }
 
-void	get_n_limits(int q[N], t_game *g)
+void	get_n_limits(int *q, t_game *g, int chumk_number)
 {
 	int		*d;
 	int		i;
@@ -51,9 +51,9 @@ void	get_n_limits(int q[N], t_game *g)
 
 	// 3 - get N splits limits and free
 	i = 0;
-	while (i < N - 1)
+	while (i < chumk_number - 1)
 	{
-		q[i] = d[(size + (size * i))  / N];
+		q[i] = d[(size + (size * i))  / chumk_number];
 		i++;
 	}
 	q[i] = d[size - 1];

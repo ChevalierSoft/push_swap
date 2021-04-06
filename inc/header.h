@@ -16,7 +16,7 @@
 # include "../libft/libft.h"
 # include <errno.h>
 
-# define N 5
+// # define N 20
 
 typedef t_list t_stack;
 
@@ -63,7 +63,7 @@ void	dumb_sort(t_game *g);
 void	dumb_sort2(t_game *g);
 
 // dumb_sort_100.c
-void	dumb_sort_100(t_game *g);
+void	dumb_sort_100(t_game *g, int chunk_number);
 
 // fill_stack.c
 int		fill_stack(t_game *g, int argc, char **argv);
@@ -77,7 +77,7 @@ int		find_3rd_lowest(t_game *g, int n, int m);
 void	game_init(t_game *g, int argc);
 
 // get_n_limits.c
-void	get_n_limits(int q[N], t_game *g);
+void	get_n_limits(int *q, t_game *g, int chumk_number);
 
 // is_sorted.c
 int		is_sorted(t_game *g);
