@@ -16,7 +16,7 @@
 # include "../libft/libft.h"
 # include <errno.h>
 
-#define N 5
+# define N 5
 
 typedef t_list t_stack;
 
@@ -102,7 +102,9 @@ void	sort_100(t_game *g);
 void	sort_stack(t_game *g);
 
 // straff_to.c
-void	straff_to(t_game *g, int loc);
+// void	straff_to(t_game *g, int loc);
+void	straff_to(t_game *g, int loc,
+	void (*rx)(t_game *, int), void (*rrx)(t_game *, int));
 
 // listen.c
 void	listen(t_game *g);

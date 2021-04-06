@@ -46,7 +46,7 @@ void	push_3_lowest(t_game *g, int *l, int n)
 		i++;
 	}
 	printf("smallest -> %d : %d\n", lil[0], lil[1]);
-	straff_to(g, lil[1]);
+	straff_to(g, lil[1], &ra, &rra);
 	pb(g, 1);
 }
 

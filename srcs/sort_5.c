@@ -42,12 +42,12 @@ void	push_2_lowest(t_game *g, int l1, int l2)
 			vec2d_int_init(order, l1, l2);
 	else
 		vec2d_int_init(order, l2, l1);	
-	straff_to(g, order[0]);
+	straff_to(g, order[0], &ra, &rra);
 	pb(g, 1);
 	order[1] = find_1st_lowest(g);
 	if (order[1] > g->a_size)
 		order[1] -= g->a_size;
-	straff_to(g, order[1]);
+	straff_to(g, order[1], &ra, &rra);
 	pb(g, 1);
 }
 

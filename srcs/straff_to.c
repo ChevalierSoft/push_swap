@@ -12,7 +12,8 @@
 
 #include "../inc/header.h"
 
-void	straff_to(t_game *g, int loc) 
+void	straff_to(t_game *g, int loc,
+	void (*rx)(t_game *, int), void (*rrx)(t_game *, int)) 
 { 
 	int		i;
 	void	(*f)(t_game *, int);
@@ -21,9 +22,9 @@ void	straff_to(t_game *g, int loc)
 		return ;
 	i = ft_abs(loc);
 	if (loc < 0)
-		f = &rra; 
+		f = rrx; 
 	else
-		f = &ra;
+		f = rx;
 	while (i--) 
 		f(g, 1);
 }

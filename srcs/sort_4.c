@@ -19,7 +19,7 @@ void	sort_4(t_game *g)
 	low = find_1st_lowest(g);
 	if (low > 2)
 		low -= 4;
-	straff_to(g, low);
+	straff_to(g, low, &ra, &rra);
 	pb(g, 1);
 	sort_3(g, g->a);
 	g->v = 1;
