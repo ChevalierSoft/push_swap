@@ -14,7 +14,9 @@
 
 void	rrr(t_game *g, int aff)
 {
-	rra(g, aff);
+	if (aff)
+		ft_print("rrr\n");
+	rra(g, 0);
 	g->cpt--;
-	rrb(g, aff);
+	rrb(g, 0);
 }
