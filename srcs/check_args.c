@@ -25,6 +25,7 @@ int	check_args(t_game *g, int argc, char **argv)
 		if (argc < 3)
 			return (1);
 		g->v = i++;
+		// g->argc--;
 	}
 	while (i < argc)
 	{

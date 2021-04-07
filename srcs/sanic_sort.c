@@ -16,7 +16,6 @@ void	sanic_sort(t_game *g)
 {
 	if (is_sorted(g))
 		return ;
-
 	if (g->argc < 2)
 		return ;
 	else if (g->argc == 2)
@@ -27,11 +26,8 @@ void	sanic_sort(t_game *g)
 		sort_4(g);
 	else if (g->argc == 5)
 		sort_5(g);
-	// else if (g->argc < 200)
-	// 	dumb_sort_100(g, 5);
-	else
+	else if (g->argc < 200)
 		dumb_sort_100(g, 5);
-		//sort_100(g);
-		//dumb_sort(g);
-		//dumb_sort2(g);
+	else
+		dumb_sort_100(g, 10);
 }

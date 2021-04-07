@@ -25,9 +25,11 @@ int	main(int argc, char **argv)
 		display_lists(&g);
 	listen(&g);
 	if (is_sorted(&g))
-		printf("OK\n");
+		ft_print("OK\n");
 	else
-		printf("KO\n");
+		ft_print("KO\n");
+	g.v = 1;
+	// display_lists(&g);
 	delete_game(&g);
 	return (0);
 }

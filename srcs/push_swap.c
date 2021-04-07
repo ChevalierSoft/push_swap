@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		return (1);
 	g.a_size = ft_lstcount(g.a);
 	g.a_initial_size = ft_lstcount(g.a);
-	sort_stack(&g);
+	sanic_sort(&g);
 	delete_game(&g);
 	return (0);
 }

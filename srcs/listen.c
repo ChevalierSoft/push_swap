@@ -45,15 +45,14 @@ void	check_instruction(t_game *g, char *l)
 		rrb(g, 0);
 	else if (!ft_strncmp(l, "rrr", 4))
 		rrr(g, 0);
-	else
-		wrong_input(g, l);
+	// printf("l: %s\n", l);
 }
 
 void	listen(t_game *g)
 {
 	char	*l;
 
-	while (get_next_line(0, &l) >= 1)
+	while (get_next_line(0, &l) > 0)
 	{
 		//printf("%s\n", l);
 		check_instruction(g, l);

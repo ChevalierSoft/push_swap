@@ -59,5 +59,5 @@ void	display_lists(t_game *g)
 		}
 		printf("%s\n", panel);
 	}
-	//usleep(300000);
+	// usleep(300000);
 }

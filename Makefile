@@ -39,15 +39,16 @@ dumb_sort.c \
 dumb_sort2.c \
 dumb_sort_100.c \
 insert_sort.c \
+find_first_chunk.c \
 find_lowest.c \
 get_n_limits.c \
+push_chunk.c \
 push_swap.c \
 sort_2.c \
 sort_3.c \
 sort_4.c \
 sort_5.c \
 sort_100.c \
-sort_stack.c \
 straff_to.c \
 sanic_sort.c \
 )
