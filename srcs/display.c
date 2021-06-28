@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:03 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 09:52:52 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/04/07 11:29:11 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	fill_panel(t_stack *sk, char *panel)
 
 void	display_lists(t_game *g)
 {
-	unsigned char	panel[27];
-	t_stack			*a;
-	t_stack			*b;
+	char	panel[27];
+	t_stack	*a;
+	t_stack	*b;
 
 	if (!g->v)
 		return ;
