@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:34:21 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 11:32:55 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/28 05:13:08 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	sort_3(t_game *g, t_stack *sk)
 {
-	int a;
-	int b;
-	int c;
+	int	a;
+	int	b;
+	int	c;
 
 	a = *((int *)sk->content);
 	b = *((int *)sk->next->content);
 	c = *((int *)sk->next->next->content);
-	if (a < b && b < c)				// a < b < c
+	if (a < b && b < c)
 		return ;
-	else if (a < c && c < b)		//a < c < b
+	else if (a < c && c < b)
 	{
 		sa(g, 1);
 		ra(g, 1);
 	}
-	else if (b < a && a < c)		// b < a < c
+	else if (b < a && a < c)
 		sa(g, 1);
-	else if (b < c && c < a)		// b < c < a
+	else if (b < c && c < a)
 		ra(g, 1);
-	else if (c < a && a < b)		// c < a < b
+	else if (c < a && a < b)
 		rra(g, a);
-	else if (c < b && b < a)		// c < b < a
+	else if (c < b && b < a)
 	{
 		sa(g, 1);
 		rra(g, 1);

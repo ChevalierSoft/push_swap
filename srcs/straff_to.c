@@ -12,19 +12,23 @@
 
 #include "../inc/header.h"
 
-void	straff_to(t_game *g, int loc,
-	void (*rx)(t_game *, int), void (*rrx)(t_game *, int)) 
-{ 
+void	straff_to( \
+	t_game *g, \
+	int loc, \
+	void (*rx)(t_game *, int), \
+	void (*rrx)(t_game *, int) \
+	)
+{
 	int		i;
 	void	(*f)(t_game *, int);
 
-	if (!loc) 
+	if (!loc)
 		return ;
 	i = ft_abs(loc);
 	if (loc < 0)
-		f = rrx; 
+		f = rrx;
 	else
 		f = rx;
-	while (i--) 
+	while (i--)
 		f(g, 1);
 }
