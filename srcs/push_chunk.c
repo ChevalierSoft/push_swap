@@ -56,7 +56,6 @@ int	roll_lowest_greatest(t_game *g, t_item *lowest, t_item *greatest, int t)
 
 void	push_chunk(t_game *g, int limit, int chunk_number)
 {
-	t_stack	*a;
 	int		t;
 	int		j;
 	t_item	lowest;
@@ -66,7 +65,6 @@ void	push_chunk(t_game *g, int limit, int chunk_number)
 	int		b_size;
 
 	j = g->a_initial_size / chunk_number;
-	a = g->a;
 	while (j && g->a)
 	{
 		t = find_first_chunk(g, limit);

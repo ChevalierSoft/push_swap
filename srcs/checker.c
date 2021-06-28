@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 09:52:01 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/28 12:54:54 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 	else
 		ft_print("KO\n");
 	g.v = 1;
-	// display_lists(&g);
 	delete_game(&g);
 	return (0);
 }

@@ -1,5 +1,5 @@
 CC			= gcc
-FLAGS		= -g
+FLAGS		= -g -Wall -Wextra -Werror
 PS_OBJS		= $(PS_SRCS:.c=.o)
 CH_OBJS 	= $(CH_SRCS:.c=.o)
 PT_OBJS 	= $(PT_SRCS:.c=.o)
@@ -35,10 +35,7 @@ listen.c \
 )
 
 PS_SRCS		= $(addprefix srcs/, \
-dumb_sort.c \
-dumb_sort2.c \
 dumb_sort_100.c \
-insert_sort.c \
 find_first_chunk.c \
 find_lowest.c \
 get_n_limits.c \
@@ -48,7 +45,6 @@ sort_2.c \
 sort_3.c \
 sort_4.c \
 sort_5.c \
-sort_100.c \
 straff_to.c \
 sanic_sort.c \
 )

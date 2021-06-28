@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/30 08:01:15 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/28 14:22:59 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "../libft/libft.h"
 # include <errno.h>
 
-typedef t_list t_stack;
+typedef t_list	t_stack;
 
 typedef struct s_item
 {
@@ -49,7 +49,7 @@ int		check_args(t_game *g, int argc, char **argv);
 int		check_occ(t_game *g, int tmp);
 
 // delete_game.c
-void 	delete_game(t_game *g);
+void	delete_game(t_game *g);
 
 // display.c
 void	display_lists(t_game *g);
@@ -67,7 +67,7 @@ void	dumb_sort_100(t_game *g, int chunk_number);
 int		fill_stack(t_game *g, int argc, char **argv);
 
 // find_first_chunk.c
-int	find_first_chunk(t_game *g, int limit);
+int		find_first_chunk(t_game *g, int limit);
 
 // find_lowest.c
 int		find_1st_lowest(t_game *g);
@@ -103,9 +103,8 @@ void	push_2_lowest(t_game *g, int l1, int l2);
 void	sort_100(t_game *g);
 
 // straff_to.c
-// void	straff_to(t_game *g, int loc);
 void	straff_to(t_game *g, int loc,
-	void (*rx)(t_game *, int), void (*rrx)(t_game *, int));
+			void (*rx)(t_game *, int), void (*rrx)(t_game *, int));
 
 // listen.c
 void	listen(t_game *g);

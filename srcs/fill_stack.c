@@ -6,20 +6,11 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/28 05:03:21 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/28 20:44:03 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
-
-void	ft_aff_list(t_stack *s)
-{
-	while (s)
-	{
-		printf("> %d\n", *((int *)s->content));
-		s = s->next;
-	}
-}
 
 t_list	*ft_lstcpy(t_list *src, int size)
 {
@@ -31,7 +22,7 @@ t_list	*ft_lstcpy(t_list *src, int size)
 	while (src)
 	{
 		data = malloc(size);
-		data = ft_memcpy(data, ((int *)src->content), size);		
+		data = ft_memcpy(data, ((int *)src->content), size);
 		n = ft_lstnew(data);
 		ft_lstadd_back(&dest, n);
 		src = src->next;
@@ -39,10 +30,7 @@ t_list	*ft_lstcpy(t_list *src, int size)
 	return (dest);
 }
 
-void	ft_lstbubble_sort( \
-	void *list, \
-	int size \
-	)
+void	ft_lstbubble_sort(void *list)
 {
 	t_list	*n;
 	t_list	*m;
@@ -56,7 +44,7 @@ void	ft_lstbubble_sort( \
 		n = list;
 		while (n->next)
 		{
-			if (*((int *)n->content) > *((int *)n->next->content))	// cmp
+			if ((*((int *)n->content) > *((int *)n->next->content)))
 			{
 				tmp = n->content;
 				n->content = n->next->content;
@@ -71,44 +59,50 @@ void	ft_lstbubble_sort( \
 	}
 }
 
-void	fill_simpler_stack(t_game *g)
-{
-	t_stack	*d;			// dest
-	t_stack	*sorted;	// copy
+// fills sk[1] with number from 0 to stack_size int the order of sk[0]
 
-	t_stack	*n;			// on the copy d
-	t_stack	*m;			// on the sorted list
-	t_stack	*p;			// on a
+void	fill_simpler_stack_loop(t_stack *sk[3], t_stack *pt[3])
+{
 	int		pos;
 
-	d = ft_lstcpy(g->a, sizeof(int));
-	sorted = ft_lstcpy(g->a, sizeof(int));
-	ft_lstbubble_sort(sorted, ft_lstsize(g->a));
-
-	n = d;
-	p = g->a;
-	while (n)
+	pt[0] = sk[0];
+	pt[1] = sk[1];
+	while (pt[1])
 	{
-		m = sorted;
+		pt[2] = sk[2];
 		pos = 0;
-		while (m)
+		while (pt[2])
 		{
-			if (*((int *)m->content) == *((int *)p->content))
+			if (*((int *)pt[2]->content) == *((int *)pt[0]->content))
 			{
-				*((int *)n->content) = pos;
+				*((int *)pt[1]->content) = pos;
 				break ;
 			}
-				++pos;
-			m = m->next;
+			++pos;
+			pt[2] = pt[2]->next;
 		}
-		p = p->next;
-		n = n->next;
+		pt[0] = pt[0]->next;
+		pt[1] = pt[1]->next;
 	}
+}
 
-	// ft_aff_list(d);
-	ft_lstclear(&g->a, &free);
-	g->a = d;
-	ft_lstclear(&sorted, &free);
+// sk[0] is g->a the stack as it came from the arguments
+// sk[1] will be the stack used using numbers from 0 to stack_size
+// sk[2] is a sorted version of sk[0]
+
+void	fill_simpler_stack(t_game *g)
+{
+	t_stack	*sk[3];
+	t_stack	*pt[3];
+
+	sk[0] = g->a;
+	sk[1] = ft_lstcpy(sk[0], sizeof(int));
+	sk[2] = ft_lstcpy(sk[0], sizeof(int));
+	ft_lstbubble_sort(sk[2]);
+	fill_simpler_stack_loop(sk, pt);
+	ft_lstclear(&sk[0], &free);
+	ft_lstclear(&sk[2], &free);
+	g->a = sk[1];
 }
 
 int	fill_stack(t_game *g, int argc, char **argv)
@@ -117,7 +111,6 @@ int	fill_stack(t_game *g, int argc, char **argv)
 	int			i;
 	long long	tmp;
 	int			*num;
-	t_stack		*a;
 
 	i = g->v;
 	g->a = NULL;
