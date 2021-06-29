@@ -2,9 +2,7 @@ CC			= gcc
 FLAGS		= -g -Wall -Wextra -Werror
 PS_OBJS		= $(PS_SRCS:.c=.o)
 CH_OBJS 	= $(CH_SRCS:.c=.o)
-PT_OBJS 	= $(PT_SRCS:.c=.o)
 
-PT_SRCS		= ./ps_tester/ps_tester.c
 
 SHARED_SRCS	= $(addprefix srcs/, \
 sa.c \
@@ -58,17 +56,20 @@ else
 	POSIX = 1
 endif
 
-all : push_swap checker
+CYN			= \033[36m
+RST			= \033[0m
 
-pt : $(PT_OBJS)
-	@gcc -O3 -o pt $(PT_OBJS)
-	@echo "paf c'est pret"
+all : push_swap # checker
 
 push_swap : _libft $(PS_OBJS)
 	@$(CC) $(FLAGS) -o push_swap $(PS_OBJS) -DPOSIX=$(POSIX) ./libft/libft.a
+	@echo "$(CYN)done push_swap $(RST)"
 
 checker : _libft $(CH_OBJS)
 	@$(CC) $(FLAGS) -o checker $(CH_OBJS) -DPOSIX=$(POSIX) ./libft/libft.a
+	@echo "$(CYN)done checker $(RST)"
+
+bonus : checker
 
 _libft :
 	@make --silent -C ./libft/
@@ -79,11 +80,11 @@ _libft :
 clean :
 	@/bin/rm -f $(PS_OBJS) 
 	@/bin/rm -f $(CH_OBJS) 
+	@make fclean --silent -C ./libft
 
 fclean : clean
 	@/bin/rm -f push_swap
 	@/bin/rm -f checker
-#	make fclean --silent -C ./libft
 
 re : fclean all
 
