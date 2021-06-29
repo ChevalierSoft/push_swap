@@ -6,26 +6,14 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/30 08:24:51 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/29 14:06:50 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
 
-void	aff(char *name, int *d, int size)
-{
-	int i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%s[%d] = %d\n", name, i, d[i]);
-		i++;
-	}
-}
-
 static inline
-int find_greatest(t_stack *sk)
+int	find_greatest(t_stack *sk)
 {
 	t_item	t;
 	int		i;
@@ -51,8 +39,9 @@ void	dumb_sort_100(t_game *g, int chunk_number)
 	int	*q;
 	int	i;
 
-	if (!(q = malloc(sizeof(int) * chunk_number)))
-		return ;
+	q = malloc(sizeof(int) * chunk_number);
+	if (!q)
+		exit(6);
 	get_n_limits(q, g, chunk_number);
 	i = 0;
 	while (i < chunk_number - 1)
@@ -64,12 +53,11 @@ void	dumb_sort_100(t_game *g, int chunk_number)
 	i = find_greatest(g->b);
 	if (i)
 	{
-		if (i > ft_lstcount(g->b)  / 2)
+		if (i > ft_lstcount(g->b) / 2)
 			i -= ft_lstcount(g->b);
 		straff_to(g, i, &rb, &rrb);
 	}
 	while (g->b)
 		pa(g, 1);
-	// aff("q", q, chunk_number);
 	free(q);
 }

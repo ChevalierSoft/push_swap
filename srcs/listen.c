@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:11:08 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 10:26:00 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/29 14:07:37 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	check_instruction(t_game *g, char *l)
 		rrb(g, 0);
 	else if (!ft_strncmp(l, "rrr", 4))
 		rrr(g, 0);
-	// printf("l: %s\n", l);
 }
 
 void	listen(t_game *g)
@@ -54,17 +53,14 @@ void	listen(t_game *g)
 
 	while (get_next_line(0, &l) > 0)
 	{
-		//printf("%s\n", l);
 		check_instruction(g, l);
 		free(l);
 		display_lists(g);
 	}
-	// printf("_ %s\n", l);
 	if (*l != '\0')
 	{
 		free(l);
 		quit(g, 1);
 	}
-	//display_lists(g);
 	free(l);
 }

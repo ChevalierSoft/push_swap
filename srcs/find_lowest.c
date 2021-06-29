@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 11:23:58 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/03/29 12:01:22 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/29 14:04:25 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,43 +55,6 @@ int	find_2nd_lowest(t_game *g, int n)
 	while (sk)
 	{
 		if (i != n && *((int *)sk->content) < *((int *)tmp->content))
-		{
-			tmp = sk;
-			lowest = i;
-		}
-		i++;
-		sk = sk->next;
-	}
-	return (lowest);
-}
-
-int	find_3rd_lowest(t_game *g, int n, int m)
-{
-	t_stack	*sk;
-	t_stack	*tmp;
-	int		lowest;
-	int		i;
-
-	tmp = g->a;
-	i = 0;
-	sk = g->a;
-	if (n == 0 || m == 0)
-	{
-		if (n == 1 || m == 1)
-		{
-			i = 2;
-			sk = g->a->next->next;
-		}
-		else
-		{
-			i = 1;
-			sk = g->a->next;
-		}
-	}
-	lowest = i;
-	while (sk)
-	{
-		if (i != n && i != m && *((int *)sk->content) < *((int *)tmp->content))
 		{
 			tmp = sk;
 			lowest = i;
