@@ -6,7 +6,7 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 02:01:48 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/02/20 05:12:02 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:59:40 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,22 @@
 #define RAS 619
 #define FTN 69
 
-static inline int	ret_a_plus(int *pt, int r)
+static inline
+int	ret_a_plus(int *pt, int r)
 {
 	(*pt)++;
 	return (r);
 }
 
-static inline int	ret_a_zero(int *pt, int r)
+static inline
+int	ret_a_zero(int *pt, int r)
 {
 	(*pt) = 0;
 	return (r);
 }
 
-static inline int	bosg(int *pt, char *buf, char **line, int res)
+static inline
+int	bosg(int *pt, char *buf, char **line, int res)
 {
 	char	mas[2];
 	char	*tmp;
@@ -53,7 +56,8 @@ static inline int	bosg(int *pt, char *buf, char **line, int res)
 		{
 			tmp = (*line);
 			mas[0] = buf[(*pt)++];
-			if (!((*line) = ft_strjoin(tmp, mas)))
+			*line = ft_strjoin(tmp, mas);
+			if (!(*line))
 			{
 				free(tmp);
 				return (ALERTE);
@@ -66,7 +70,8 @@ static inline int	bosg(int *pt, char *buf, char **line, int res)
 	return (RAS);
 }
 
-static int			get_next_line_proxy(t_gnldata *d, char **l, int *ok, int fd)
+static inline
+int	get_next_line_proxy(t_gnldata *d, char **l, int *ok, int fd)
 {
 	if (d->a[fd] > 0 && d->a[fd] < BUFFER_SIZE && d->buf[fd][d->a[fd]])
 	{
@@ -79,7 +84,7 @@ static int			get_next_line_proxy(t_gnldata *d, char **l, int *ok, int fd)
 	return (FTN);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static t_gnldata	d;
 	int					is_ok;

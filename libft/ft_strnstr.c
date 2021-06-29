@@ -6,13 +6,14 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:40:30 by dait-atm          #+#    #+#             */
-/*   Updated: 2020/12/31 18:38:52 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:56:36 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strchr_2(const char *s, char c)
+static inline
+int	ft_strchr_2(const char *s, char c)
 {
 	unsigned int	i;
 
@@ -26,7 +27,7 @@ static int	ft_strchr_2(const char *s, char c)
 	return (-1);
 }
 
-char		*ft_strnstr(const char *src, const char *needle, size_t len)
+char	*ft_strnstr(const char *src, const char *needle, size_t len)
 {
 	size_t			i;
 	size_t			ln;

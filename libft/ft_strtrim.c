@@ -6,13 +6,14 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:17:25 by dait-atm          #+#    #+#             */
-/*   Updated: 2020/12/31 18:43:23 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:58:09 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_is_from_base(char c, const char *set)
+static
+int	ft_is_from_base(char c, const char *set)
 {
 	while (*set)
 	{
@@ -22,7 +23,8 @@ static int		ft_is_from_base(char c, const char *set)
 	return (0);
 }
 
-static size_t	count_setlen_lr(const char *s, const char *set, int sens)
+static
+size_t	count_setlen_lr(const char *s, const char *set, int sens)
 {
 	size_t	i;
 
@@ -39,7 +41,7 @@ static size_t	count_setlen_lr(const char *s, const char *set, int sens)
 	return (i);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	beg;
 	size_t	size;

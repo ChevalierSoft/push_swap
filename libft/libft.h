@@ -6,7 +6,7 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:04:23 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/04/01 08:31:04 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 12:00:05 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@
 #  define FD_MAX 20
 # endif
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_gnldata
+typedef struct s_gnldata
 {
 	long	res[FD_MAX];
 	char	buf[FD_MAX][BUFFER_SIZE];
 	int		a[FD_MAX];
 }				t_gnldata;
 
-typedef struct	s_strtoll_content
+typedef struct s_strtoll_content
 {
 	char				*s;
 	int					c;

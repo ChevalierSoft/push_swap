@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 14:11:18 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/01/24 12:50:30 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:57:27 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <errno.h>
 #include <limits.h>
 
-static inline void	prepare_ft_strtoll(int *neg, int *c, char **s, int *base)
+static inline
+void	prepare_ft_strtoll(int *neg, int *c, char **s, int *base)
 {
 	*neg = 0;
 	while (*c == ' ')
@@ -43,7 +44,8 @@ static inline void	prepare_ft_strtoll(int *neg, int *c, char **s, int *base)
 	}
 }
 
-static inline void	prepare_strtoll(t_strtoll_content *cont, int neg, int base)
+static inline
+void	prepare_strtoll(t_strtoll_content *cont, int neg, int base)
 {
 	if (neg)
 		cont->cutoff = -(unsigned long long)LLONG_MIN;
@@ -54,7 +56,8 @@ static inline void	prepare_strtoll(t_strtoll_content *cont, int neg, int base)
 	cont->any = 0;
 }
 
-static inline void	isll(const char *n, unsigned long long *a, char **s, int *c)
+static inline
+void	isll(const char *n, unsigned long long *a, char **s, int *c)
 {
 	*a = 0;
 	*s = (char *)n;
@@ -62,7 +65,8 @@ static inline void	isll(const char *n, unsigned long long *a, char **s, int *c)
 	(*s)++;
 }
 
-static inline int	ft_strtoll_loop(t_strtoll_content *cont, int base)
+static inline
+int	ft_strtoll_loop(t_strtoll_content *cont, int base)
 {
 	if (ft_isdigit(cont->c))
 		cont->c -= '0';
@@ -90,7 +94,7 @@ static inline int	ft_strtoll_loop(t_strtoll_content *cont, int base)
 	return (1);
 }
 
-long long			ft_strtoll(const char *nptr, char **endptr, int base)
+long long	ft_strtoll(const char *nptr, char **endptr, int base)
 {
 	t_strtoll_content	cont;
 

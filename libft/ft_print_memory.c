@@ -6,13 +6,14 @@
 /*   By: dait-atm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 19:58:59 by dait-atm          #+#    #+#             */
-/*   Updated: 2020/12/31 18:03:49 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:54:07 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_print_hex(uint64_t v, int nbd)
+static
+void	ft_print_hex(uint64_t v, int nbd)
 {
 	unsigned long	tab[16];
 	long			j;
@@ -40,7 +41,8 @@ static void	ft_print_hex(uint64_t v, int nbd)
 	}
 }
 
-static void	ft_prepare_oct_print(void *addr)
+static
+void	ft_prepare_oct_print(void *addr)
 {
 	unsigned long	*l;
 
@@ -61,7 +63,8 @@ static void	ft_prepare_oct_print(void *addr)
 		ft_print_hex(*l, 3);
 }
 
-static int	ft_aff_oct(void *addr, unsigned int size)
+static
+int	ft_aff_oct(void *addr, unsigned int size)
 {
 	int		cpt;
 	int		flagou;
@@ -90,7 +93,8 @@ static int	ft_aff_oct(void *addr, unsigned int size)
 	return (sp);
 }
 
-static void	ft_aff_msg(void *addr, int nbr)
+static
+void	ft_aff_msg(void *addr, int nbr)
 {
 	char	*c;
 
@@ -112,7 +116,7 @@ static void	ft_aff_msg(void *addr, int nbr)
 	}
 }
 
-void		*ft_print_memory(void *addr, size_t size)
+void	*ft_print_memory(void *addr, size_t size)
 {
 	size_t	aerosol;
 
