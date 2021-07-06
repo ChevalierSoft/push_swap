@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:10:17 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/28 20:25:48 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/06 03:04:44 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void	sanic_sort(t_game *g)
 		sort_4(g);
 	else if (g->argc == 5)
 		sort_5(g);
-	else if (g->argc < 200)
+	else if (g->argc == 100)
 		dumb_sort_100(g, 5);
-	else
+	else if (g->argc == 500)
 		dumb_sort_100(g, 10);
+	else
+		stupidous_totalus(g);
 }
