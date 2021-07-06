@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:11:08 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/29 14:07:37 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/06 03:30:44 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static inline
 void	wrong_input(t_game *g, char *l)
 {
-	printf("l : %s", l);
 	free(l);
 	quit(g, 1);
 }
@@ -45,6 +44,8 @@ void	check_instruction(t_game *g, char *l)
 		rrb(g, 0);
 	else if (!ft_strncmp(l, "rrr", 4))
 		rrr(g, 0);
+	else
+		wrong_input(g, l);
 }
 
 void	listen(t_game *g)
