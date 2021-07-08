@@ -65,11 +65,11 @@ push_swap : _libft $(PS_OBJS)
 	@$(CC) $(FLAGS) -o push_swap $(PS_OBJS) -DPOSIX=$(POSIX) ./libft/libft.a
 	@echo "$(CYN)done push_swap $(RST)"
 
-checker : _libft $(CH_OBJS)
-	@$(CC) $(FLAGS) -o checker $(CH_OBJS) -DPOSIX=$(POSIX) ./libft/libft.a
-	@echo "$(CYN)done checker $(RST)"
+#checker : _libft $(CH_OBJS)
+#	@$(CC) $(FLAGS) -o checker $(CH_OBJS) -DPOSIX=$(POSIX) ./libft/libft.a
+#	@echo "$(CYN)done checker $(RST)"
 
-bonus : checker
+#bonus : checker
 
 _libft :
 	@make --silent -C ./libft/
