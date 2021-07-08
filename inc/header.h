@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:54:12 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/28 14:22:59 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/06 03:04:01 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ int		is_sorted(t_game *g);
 // push_chunk.c
 void	push_chunk(t_game *g, int limit, int chunk_number);
 
-// insert_sort.c
-void	insert_sort(t_game *g);
 // sanic_sort.c
 void	sanic_sort(t_game *g);
 // sort_2.c
@@ -99,8 +97,10 @@ void	sort_4(t_game *g);
 // sort_5.c
 void	sort_5(t_game *g);
 void	push_2_lowest(t_game *g, int l1, int l2);
-//sort_100.c
+// sort_100.c
 void	sort_100(t_game *g);
+// stupidous_totalus
+void	stupidous_totalus(t_game *g);
 
 // straff_to.c
 void	straff_to(t_game *g, int loc,

@@ -43,8 +43,9 @@ sort_2.c \
 sort_3.c \
 sort_4.c \
 sort_5.c \
-straff_to.c \
 sanic_sort.c \
+straff_to.c \
+stupidous_totalus.c \
 )
 
 CH_SRCS 	+= $(SHARED_SRCS)
