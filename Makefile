@@ -1,5 +1,5 @@
 CC			= gcc
-FLAGS		= -g -Wall -Wextra -Werror
+FLAGS		= -Wall -Wextra -Werror
 PS_OBJS		= $(PS_SRCS:.c=.o)
 CH_OBJS 	= $(CH_SRCS:.c=.o)
 

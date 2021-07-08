@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:18:16 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/28 12:55:17 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/08 23:49:43 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ int	check_args(t_game *g, int argc, char **argv)
 	i = 1;
 	if (argc < 2)
 		return (1);
-	if (!ft_strncmp(argv[1], "-v", 3))
-	{
-		if (argc < 3)
-			return (1);
-		g->v = i++;
-	}
 	while (i < argc)
 	{
 		j = 0;
