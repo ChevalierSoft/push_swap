@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:11:08 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/07/06 03:30:44 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/09 04:51:00 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,12 @@ void	listen(t_game *g)
 {
 	char	*l;
 
+	l = NULL;
 	while (get_next_line(0, &l) > 0)
 	{
 		check_instruction(g, l);
 		free(l);
 		display_lists(g);
-	}
-	if (*l != '\0')
-	{
-		free(l);
-		quit(g, 1);
 	}
 	free(l);
 }
