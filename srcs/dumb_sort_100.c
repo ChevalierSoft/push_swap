@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/06/29 14:06:50 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/13 09:19:36 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	dumb_sort_100(t_game *g, int chunk_number)
 	int	*q;
 	int	i;
 
-	q = malloc(sizeof(int) * chunk_number);
+	q = malloc(sizeof(int) * (chunk_number + 1));
 	if (!q)
 		exit(6);
 	get_n_limits(q, g, chunk_number);
