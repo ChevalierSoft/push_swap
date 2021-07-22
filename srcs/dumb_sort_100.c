@@ -6,7 +6,7 @@
 /*   By: dait-atm <dait-atm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 11:20:05 by dait-atm          #+#    #+#             */
-/*   Updated: 2021/07/13 09:19:36 by dait-atm         ###   ########.fr       */
+/*   Updated: 2021/07/22 17:02:10 by dait-atm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	dumb_sort_100(t_game *g, int chunk_number)
 		push_chunk(g, q[i], chunk_number);
 		i++;
 	}
-	push_chunk(g, q[chunk_number], chunk_number - 1);
+	push_chunk(g, q[chunk_number - 1], chunk_number - 1);
 	i = find_greatest(g->b);
 	if (i)
 	{
